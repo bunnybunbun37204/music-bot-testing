@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
     emojis: {
         off: ':x:',
@@ -8,7 +10,7 @@ module.exports = {
     },
 
     discord: {
-        token: 'ODg2OTI1NTcwNTMxNzk5MDQx.YT8rzg.LDQtA8q6WU0-ThHZtPMsVAoxxxo',
+        token: process.env.TOKEN,
         prefix: '$',
         activity: '$play',
     },
