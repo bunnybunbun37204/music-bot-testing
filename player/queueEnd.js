@@ -1,5 +1,5 @@
 module.exports = (client, message, queue) => {
-        const channel = client.channel.get(message.guild.me.voice.channel.id);
+        const channel = client.channels.get(message.guild.me.voice.channel.id);
         const delayTimeMs = 1 * 60000;
         channel.join().then(connection => {
             // Yay, it worked!
