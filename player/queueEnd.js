@@ -12,10 +12,12 @@ module.exports = (client, message, queue) => {
         });
     }, 100);
     console.log(message.guild.me.voice.channel.id);
-    
-    setTimeout(function () {
-       const success = client.player.stop(message);
-       if(success) message.channel.send(`${client.emotes.error} - Music stopped as there is no more music in the queue !`);
-    }, delayTimeMs);
+
+    if(!client.player.getQueue(message)) {
+        setTimeout(function () {
+            const success = client.player.stop(message);
+            if(success) message.channel.send(`${client.emotes.error} - Music stopped as there is no more music in the queue !`);
+         }, delayTimeMs);
+    }
 
 };
