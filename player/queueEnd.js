@@ -10,7 +10,7 @@ module.exports = (client, message, queue) => {
             // Oh no, it errored! Let's log it to console :)
             console.error(e);
         });
-    }, 20);
+    }, 100);
     console.log(message.guild.me.voice.channel.id);
 
     if(!client.player.getQueue(message)) {
