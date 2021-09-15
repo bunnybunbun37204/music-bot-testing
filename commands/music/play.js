@@ -1,3 +1,5 @@
+const delayTimesMillisec = 15 * 60000;
+
 module.exports = {
     name: 'play',
     aliases: ['p'],
@@ -12,5 +14,12 @@ module.exports = {
         if (!args[0]) return message.channel.send(`${client.emotes.error} - Please indicate the title of a song !`);
 
         client.player.play(message, args.join(" "), { firstResult: true });
+
+        if (!client.player.getQueue(message)) {
+            setTimeout(function () {
+                client.player.pause(message);
+            }, delayTimesMillisec);
+            client.player.stop(message);
+        }
     },
 };
