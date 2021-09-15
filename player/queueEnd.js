@@ -1,8 +1,8 @@
-module.exports = (client, message, queue) => {
+module.exports = async (client, message, queue) => {
         const id = message.guild.me.voice.channel.id;
         const channel = client.channels.cache.get(id.toString());
         const delayTimeMs = 1 * 60000;
-        channel.join().then(connection => {
+       await channel.join().then(connection => {
             // Yay, it worked!
             console.log("Successfully connected.");
           }).catch(e => {
