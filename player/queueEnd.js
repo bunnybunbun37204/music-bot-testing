@@ -10,13 +10,19 @@ module.exports = (client, message, queue) => {
             // Oh no, it errored! Let's log it to console :)
             console.error(e);
         });
-    }, 100);
+    }, 20);
     console.log(message.guild.me.voice.channel.id);
 
     if(!client.player.getQueue(message)) {
         setTimeout(function () {
-            const success = client.player.stop(message);
+            console.log(queue);
+            if(queue === [] || queue === null) {
+                const success = client.player.stop(message);
             if(success) message.channel.send(`${client.emotes.error} - Music stopped as there is no more music in the queue !`);
+            }
+            else {
+                return;
+            }
          }, delayTimeMs);
     }
 
