@@ -8,8 +8,6 @@ module.exports = {
         //PASSWORD
         const PASSWORD = "123456789";
 
-        message.channel.send(`***ฮั่นแหนะ ทำอะไรกันอะ***`);
-
         const SONGs = "https://youtube.com/playlist?list=PLHe2Mc9eTQTKkJlVZCV_j60yCvv--NW4G";
 
         if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} - You're not in a voice channel !`);
@@ -19,6 +17,7 @@ module.exports = {
         if (!args[0]) return message.channel.send(`${client.emotes.error} - Please type a password !`);
         
         if(args[0] === PASSWORD) {
+            message.channel.send(`***ฮั่นแหนะ ทำอะไรกันอะ***`);
             client.player.play(message, SONGs, { firstResult: true });
         }
         else {
