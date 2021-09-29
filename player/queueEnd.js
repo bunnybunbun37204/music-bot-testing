@@ -1,6 +1,6 @@
 module.exports = (client, message, queue) => {
     const channel_id = message.guild.me.voice.channel.id;
-    const delayTime = 1*6000;
+    const delayTime = 200;
     setTimeout(function(){
         join_server(client, channel_id);
     }, delayTime);
