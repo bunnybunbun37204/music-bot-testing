@@ -1,6 +1,9 @@
 module.exports = (client, message, queue) => {
     const channel_id = message.guild.me.voice.channel.id;
-    join_server(client, channel_id);
+    const delayTime = 1*6000;
+    setTimeout(function(){
+        join_server(client, channel_id);
+    }, delayTime);
     message.channel.send(`${client.emotes.error} - Music stopped as there is no more music in the queue !`);
 };
 
