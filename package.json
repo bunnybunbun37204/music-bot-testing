@@ -5,7 +5,7 @@
   "version": "5.0.0",
   "description": "A complete code to download for a music bot. Using a module (discord-player).",
   "scripts": {
-    "start": "nodeindex.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
